@@ -4,42 +4,49 @@ Creating a schema for a project involving a database of Food and Coffee recommen
 
 Locations Table:
 
-location_id (Primary Key)
-name (e.g., Finsbury Park)
-address
-latitude
-longitude
+- location_id (Primary Key)
+- name (e.g., Finsbury Park)
+- address
+- latitude
+- longitude
+
 Categories Table:
 
-category_id (Primary Key)
-name (e.g., Coffee Shops, Restaurants)
+- category_id (Primary Key)
+- name (e.g., Coffee Shops, Restaurants)
+
 Recommendations Table:
 
-recommendation_id (Primary Key)
-name (e.g., "Joe's Coffee", "Tasty Bites")
-description
-rating
-location_id (Foreign Key to Locations Table)
-category_id (Foreign Key to Categories Table)
+- recommendation_id (Primary Key)
+- name (e.g., "Joe's Coffee", "Tasty Bites")
+- description
+- rating
+- location_id (Foreign Key to Locations Table)
+- category_id (Foreign Key to Categories Table)
+
 Tags Table:
 
-tag_id (Primary Key)
-name (e.g., "Vegetarian-Friendly", "Cozy Atmosphere")
+- tag_id (Primary Key)
+- name (e.g., "Vegetarian-Friendly", "Cozy Atmosphere")
+
 RecommendationTags Table (Many-to-Many Relationship):
 
-recommendation_id (Foreign Key to Recommendations Table)
-tag_id (Foreign Key to Tags Table)
+- recommendation_id (Foreign Key to Recommendations Table)
+- tag_id (Foreign Key to Tags Table)
+
 Users Table:
 
-user_id (Primary Key)
-username
-email
-password (hashed and salted)
+- user_id (Primary Key)
+- username
+- email
+- password (hashed and salted)
+
 UserRecommendations Table (Many-to-Many Relationship):
 
-user_id (Foreign Key to Users Table)
-recommendation_id (Foreign Key to Recommendations Table)
-created_at (timestamp for when the user added the recommendation)
+- user_id (Foreign Key to Users Table)
+- recommendation_id (Foreign Key to Recommendations Table)
+- created_at (timestamp for when the user added the recommendation)
+
 This schema allows you to:
 
 Store information about locations (e.g., Finsbury Park).
