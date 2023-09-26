@@ -77,18 +77,22 @@ function postItem(post) {
   return `
     <li>
       <p>${sanitize(post.message)}</p>
-      <p>—${sanitize(post.venueName)} | ${prettyDate}</p>
+      <p>—${sanitize(post.venueName)}</p>
     </li>
   `;
 }
 
-function homePage() {
-  return `
-<h2>All posts</h2>
-    <ul>
-      ${posts.map(postItem).join("")}
-    </ul>`;
+function homePage(posts, errors = {}, values = {}) {
+  const title = "All posts";
+  const content = /*html*/ `
+      <h2>All posts</h2>
+      <ul>
+        ${posts.map(postItem).join("")}
+      </ul>
+    `;
+  return layout(title, content);
 }
+
 function layout(title, content) {
   return /*html*/ `
     <!doctype html>
@@ -104,4 +108,4 @@ function layout(title, content) {
   `;
 }
 
-module.exports = { formPage };
+module.exports = { formPage, homePage };

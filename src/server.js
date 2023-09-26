@@ -1,5 +1,5 @@
 const express = require("express");
-const { formPage } = require("./templates.js");
+const { formPage, homePage } = require("./templates.js");
 
 const server = express();
 
