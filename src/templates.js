@@ -13,22 +13,36 @@ function home(posts, errors = {}, values = {}) {
         ${validation(errors.venueName)}
       </p>
       <p>
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message">
-            ${values.message ? sanitize(values.message) : ""}
-          </textarea>
-        ${validation(errors.message)}
+        <label for="address">Street address</label>
+        <input
+          id="address"
+          name="address">
+            ${values.address ? sanitize(values.address) : ""}
+          </input>
+        ${validation(errors.address)}
+        </p>
+        <p>
+        <label for="borough">Address</label>
+        <input
+          id="borough"
+          name="borough">
+            ${values.address ? sanitize(values.address) : ""}
+          </input>
+        ${validation(errors.address)}
         </p>
       <button>Send</button>
     </form>
-    <h2>All posts</h2>
-    <ul>
-      ${posts.map(postItem).join("")}
-    </ul>
+    
   `;
   return layout(title, content);
+}
+
+{
+  /* CODE FOR ROWS IN TABLE
+<h2>All posts</h2>
+    <ul>
+      ${posts.map(postItem).join("")}
+    </ul>  */
 }
 
 function sanitize(unsafe) {
