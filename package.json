@@ -1,0 +1,19 @@
+{
+  "name": "db-issy-tess-tommaso-james",
+  "version": "1.0.0",
+  "description": "Tommaso: UX/UI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac28/db-issy-tess-tommaso-james.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac28/db-issy-tess-tommaso-james/issues"
+  },
+  "homepage": "https://github.com/fac28/db-issy-tess-tommaso-james#readme"
+}
