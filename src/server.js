@@ -36,7 +36,7 @@ server.post("/submit", express.urlencoded({ extended: false }), (req, res) => {
     errors.postcode = "Please enter a postcode";
   }
   if (!cuisine) {
-    errors.cuisine = "Please enter what type of food its served";
+    errors.cuisine = "Please enter what type of food it's served";
   }
   if (Object.keys(errors).length) {
     const body = formPage(submittedData, errors, req.body);
