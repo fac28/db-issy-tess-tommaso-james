@@ -22,13 +22,32 @@ function home(posts, errors = {}, values = {}) {
         ${validation(errors.address)}
         </p>
         <p>
-        <label for="borough">Address</label>
+        <label for="borough">borough</label>
         <input
           id="borough"
           name="borough">
-            ${values.address ? sanitize(values.address) : ""}
+            ${values.borough ? sanitize(values.borough) : ""}
           </input>
-        ${validation(errors.address)}
+        ${validation(errors.borough)}
+        </p>
+        <p>
+        <label for="postocode">postocode</label>
+        <input
+          id="postocode"
+          name="postocode">
+            ${values.postocode ? sanitize(values.postocode) : ""}
+          </input>
+        ${validation(errors.postocode)}
+        </p>
+
+        <p>
+        <label for="cuisine">cuisine</label>
+        <input
+          id="cuisine"
+          name="cuisine">
+            ${values.cuisine ? sanitize(values.cuisine) : ""}
+          </input>
+        ${validation(errors.cuisine)}
         </p>
       <button>Send</button>
     </form>
