@@ -1,14 +1,13 @@
 const db = require("../database/db.js");
 
-const insert_venue = db.prepare(
-  /*sql*/ `INSERT INTO venue (venueName, address, borough, postcode, ) VALUES (?, ?, ?, ?)`
-);
-const content = ["pappagone", "stret", "stret", "stret"];
+const insert_venue = db.prepare(/*sql*/ `INSERT INTO venue (name) VALUES (?)`);
+const content = ["osteria da tommaso"];
 
 function createVenue(content) {
   return insert_venue.run(content);
 }
 
+console.log(db);
 createVenue(content);
 console.log(createVenue(content));
 module.exports = { createVenue };
