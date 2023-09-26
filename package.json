@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/fac28/db-issy-tess-tommaso-james/issues"
   },
-  "homepage": "https://github.com/fac28/db-issy-tess-tommaso-james#readme"
+  "homepage": "https://github.com/fac28/db-issy-tess-tommaso-james#readme",
+
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3"
+  }
 }
