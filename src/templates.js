@@ -31,11 +31,11 @@ function home(posts, errors = {}, values = {}) {
         ${validation(errors.borough)}
         </p>
         <p>
-        <label for="postocode">postocode</label>
+        <label for="postcode">postcode</label>
         <input
-          id="postocode"
-          name="postocode">
-            ${values.postocode ? sanitize(values.postocode) : ""}
+          id="postcode"
+          name="postcode">
+            ${values.postcode ? sanitize(values.postcode) : ""}
           </input>
         ${validation(errors.postocode)}
         </p>
