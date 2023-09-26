@@ -62,7 +62,7 @@ function formPage(errors = {}, values = {}) {
 }
 
 function sanitize(unsafe) {
-  return unsafe.replace(/</g, "&lt;");
+  return unsafe /* .replace(/</g, "&lt;") */;
 }
 
 function validation(message) {
@@ -76,8 +76,11 @@ function validation(message) {
 function postItem(post) {
   return `
     <li>
-      <p>${sanitize(post.message)}</p>
-      <p>—${sanitize(post.venueName)}</p>
+      <p>${sanitize(post.venueName)}</p>
+      <p>${sanitize(post.address)}</p>
+      <p>${sanitize(post.borough)}</p>
+      <p>${sanitize(post.postcode)}</p>
+      <p>${sanitize(post.cuisine)}</p>
     </li>
   `;
 }
