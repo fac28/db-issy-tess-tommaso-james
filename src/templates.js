@@ -1,4 +1,4 @@
-function home(posts, errors = {}, values = {}) {
+function formPage(errors = {}, values = {}) {
   const title = "All posts";
   const content = /*html*/ `
     <h2>New post</h2>
@@ -13,26 +13,56 @@ function home(posts, errors = {}, values = {}) {
         ${validation(errors.venueName)}
       </p>
       <p>
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message">
-            ${values.message ? sanitize(values.message) : ""}
-          </textarea>
-        ${validation(errors.message)}
+        <label for="address">Street address</label>
+        <input
+          id="address"
+          name="address">
+            ${values.address ? sanitize(values.address) : ""}
+          </input>
+        ${validation(errors.address)}
+        </p>
+        <p>
+        <label for="borough">borough</label>
+        <input
+          id="borough"
+          name="borough">
+            ${values.borough ? sanitize(values.borough) : ""}
+          </input>
+        ${validation(errors.borough)}
+        </p>
+        <p>
+        <label for="postcode">postcode</label>
+        <input
+          id="postcode"
+          name="postcode">
+            ${values.postcode ? sanitize(values.postcode) : ""}
+          </input>
+        ${validation(errors.postocode)}
+        </p>
+
+        <p>
+        <label for="cuisine">cuisine</label>
+        <input
+          id="cuisine"
+          name="cuisine">
+            ${values.cuisine ? sanitize(values.cuisine) : ""}
+          </input>
+        ${validation(errors.cuisine)}
         </p>
       <button>Send</button>
     </form>
-    <h2>All posts</h2>
-    <ul>
-      ${posts.map(postItem).join("")}
-    </ul>
+    
   `;
   return layout(title, content);
 }
 
+{
+  /* CODE FOR ROWS IN TABLE
+   */
+}
+
 function sanitize(unsafe) {
-  return unsafe.replace(/</g, "&lt;");
+  return unsafe /* .replace(/</g, "&lt;") */;
 }
 
 function validation(message) {
@@ -44,14 +74,26 @@ function validation(message) {
 }
 
 function postItem(post) {
-  const date = new Date(post.created);
-  const prettyDate = date.toLocaleString("en-GB");
   return `
     <li>
-      <p>${sanitize(post.message)}</p>
-      <p>—${sanitize(post.venueName)} | ${prettyDate}</p>
+      <p>${sanitize(post.venueName)}</p>
+      <p>${sanitize(post.address)}</p>
+      <p>${sanitize(post.borough)}</p>
+      <p>${sanitize(post.postcode)}</p>
+      <p>${sanitize(post.cuisine)}</p>
     </li>
   `;
+}
+
+function homePage(posts, errors = {}, values = {}) {
+  const title = "All posts";
+  const content = /*html*/ `
+      <h2>All posts</h2>
+      <ul>
+        ${posts.map(postItem).join("")}
+      </ul>
+    `;
+  return layout(title, content);
 }
 
 function layout(title, content) {
@@ -69,4 +111,4 @@ function layout(title, content) {
   `;
 }
 
-module.exports = { home };
+module.exports = { formPage, homePage };
