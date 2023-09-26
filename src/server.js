@@ -1,16 +1,21 @@
 const express = require("express");
-const { home } = require("./templates.js");
+const { formPage } = require("./templates.js");
 
 const server = express();
 
 const submittedData = [];
 
 server.get("/", (req, res) => {
-  const body = home(submittedData);
+  const body = homePage(submittedData);
   res.send(body);
 });
 
-server.post("/", express.urlencoded({ extended: false }), (req, res) => {
+server.get("/submit", (req, res) => {
+  const body = formPage(submittedData);
+  res.send(body);
+});
+
+server.post("/submit", express.urlencoded({ extended: false }), (req, res) => {
   const venueName = req.body.venueName;
   const message = req.body.message;
   const errors = {};
@@ -21,7 +26,7 @@ server.post("/", express.urlencoded({ extended: false }), (req, res) => {
     errors.message = "Please enter a message";
   }
   if (Object.keys(errors).length) {
-    const body = home(submittedData, errors, req.body);
+    const body = formPage(submittedData, errors, req.body);
     res.status(400).send(body);
   } else {
     const created = Date.now();

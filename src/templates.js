@@ -1,4 +1,4 @@
-function home(posts, errors = {}, values = {}) {
+function formPage(errors = {}, values = {}) {
   const title = "All posts";
   const content = /*html*/ `
     <h2>New post</h2>
@@ -58,10 +58,7 @@ function home(posts, errors = {}, values = {}) {
 
 {
   /* CODE FOR ROWS IN TABLE
-<h2>All posts</h2>
-    <ul>
-      ${posts.map(postItem).join("")}
-    </ul>  */
+   */
 }
 
 function sanitize(unsafe) {
@@ -87,6 +84,13 @@ function postItem(post) {
   `;
 }
 
+function homePage() {
+  return `
+<h2>All posts</h2>
+    <ul>
+      ${posts.map(postItem).join("")}
+    </ul>`;
+}
 function layout(title, content) {
   return /*html*/ `
     <!doctype html>
@@ -102,4 +106,4 @@ function layout(title, content) {
   `;
 }
 
-module.exports = { home };
+module.exports = { formPage };
