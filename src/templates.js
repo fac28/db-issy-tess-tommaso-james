@@ -74,8 +74,6 @@ function validation(message) {
 }
 
 function postItem(post) {
-  const date = new Date(post.created);
-  const prettyDate = date.toLocaleString("en-GB");
   return `
     <li>
       <p>${sanitize(post.message)}</p>
