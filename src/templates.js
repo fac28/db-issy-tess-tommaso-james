@@ -4,13 +4,13 @@ function home(posts, errors = {}, values = {}) {
     <h2>New post</h2>
     <form method="POST">
       <p>
-        <label for="nickname">Nickname</label>
+        <label for="venueName">Venue Name</label>
         <input
-          id="nickname"
-          name="nickname"
-          value="${values.nickname ? sanitize(values.nickname) : ""}"
+          id="venueName"
+          name="venueName"
+          value="${values.venueName ? sanitize(values.venueName) : ""}"
         >
-        ${validation(errors.nickname)}
+        ${validation(errors.venueName)}
       </p>
       <p>
         <label for="message">Message</label>
@@ -49,7 +49,7 @@ function postItem(post) {
   return `
     <li>
       <p>${sanitize(post.message)}</p>
-      <p>—${sanitize(post.nickname)} | ${prettyDate}</p>
+      <p>—${sanitize(post.venueName)} | ${prettyDate}</p>
     </li>
   `;
 }

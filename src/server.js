@@ -3,29 +3,29 @@ const { home } = require("./templates.js");
 
 const server = express();
 
-const posts = [];
+const submittedData = [];
 
 server.get("/", (req, res) => {
-  const body = home(posts);
+  const body = home(submittedData);
   res.send(body);
 });
 
 server.post("/", express.urlencoded({ extended: false }), (req, res) => {
-  const nickname = req.body.nickname;
+  const venueName = req.body.venueName;
   const message = req.body.message;
   const errors = {};
-  if (!nickname) {
-    errors.nickname = "Please enter your nickname";
+  if (!venueName) {
+    errors.venueName = "Please enter your venueName";
   }
   if (!message) {
     errors.message = "Please enter a message";
   }
   if (Object.keys(errors).length) {
-    const body = home(posts, errors, req.body);
+    const body = home(submittedData, errors, req.body);
     res.status(400).send(body);
   } else {
     const created = Date.now();
-    posts.push({ nickname, message, created });
+    submittedData.push({ venueName: venueName, message, created });
     res.redirect("/");
   }
 });
