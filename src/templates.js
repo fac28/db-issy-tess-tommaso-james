@@ -46,16 +46,18 @@ function formPage(errors = {}, values = {}) {
           ${validation(errors.cuisine)}
         <button>Send</button>
       </form>
+      
+      <form action="/" method="get" >
+        <button type="submit" >Show All Restuarants</button>
+      </form>
+      
       </div>
+
     
   `;
   return layout(title, content);
 }
 
-{
-  /* CODE FOR ROWS IN TABLE
-   */
-}
 
 function sanitize(unsafe) {
   return unsafe /* .replace(/</g, "&lt;") */;
@@ -71,17 +73,31 @@ function validation(message) {
 
 function postItem(post) {
   return `
-  <p>${sanitize(post.venue_name)} | ${sanitize(post.location_street)}</p>
+  <p>
+    ${sanitize(post.venueName)} |
+    ${sanitize(post.address)} |
+    ${sanitize(post.borough)} |
+    ${sanitize(post.postcode)} |
+    ${sanitize(post.cuisines)}
+  </p>
   `;
 }
 
+
+{/*TO ADD LATER <form method="GET">
+<p><input type="search" name="search" value="${search}"></p>
+<p><button>Search</button></p>
+</form> */}
 function homePage(posts, errors = {}, values = {}) {
   const title = "All restaurants and streets";
   const content = /*html*/ `
-      <h2>All posts</h2>
+      <h2>All restaurants</h2>
       <ul>
         ${posts.map(postItem).join("")}
       </ul>
+      <form action="/submit" method="get" >
+        <button type="submit" >Add a restaurant</button>
+      </form>
     `;
   return layout(title, content);
 }
