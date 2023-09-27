@@ -1,3 +1,28 @@
-body {
-  background-color: pink;
+/* :root {
+  colours
+} */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
+
+main {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.form-container {
+  display: grid;
+  justify-items: center;
+  /* margin: 0 auto; */
+  /* justify-content: center; */
+}
+
+form > label,
+button {
+  display: block;
+}
+
+/* fonts */
