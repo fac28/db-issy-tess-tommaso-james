@@ -1,5 +1,5 @@
 function formPage(errors = {}, values = {}) {
-  const title = 'All posts';
+  const title = "All posts";
   const content = /*html*/ `
     <h2>New post</h2>
     <div class="form-container">
@@ -9,7 +9,7 @@ function formPage(errors = {}, values = {}) {
           <input
             id="venueName"
             name="venueName"
-            value="${values.venueName ? sanitize(values.venueName) : ''}"
+            value="${values.venueName ? sanitize(values.venueName) : ""}"
           >
           ${validation(errors.venueName)}
         
@@ -18,30 +18,30 @@ function formPage(errors = {}, values = {}) {
           <input
             id="address"
             name="address">
-              ${values.address ? sanitize(values.address) : ''}
+              ${values.address ? sanitize(values.address) : ""}
             </input>
           ${validation(errors.address)}
           
-          <label for="borough">borough</label>
+          <label for="borough">Borough</label>
           <input
             id="borough"
             name="borough">
-              ${values.borough ? sanitize(values.borough) : ''}
+              ${values.borough ? sanitize(values.borough) : ""}
             </input>
           ${validation(errors.borough)}
-          <label for="postcode">postcode</label>
+          <label for="postcode">Postcode</label>
           <input
             id="postcode"
             name="postcode">
-              ${values.postcode ? sanitize(values.postcode) : ''}
+              ${values.postcode ? sanitize(values.postcode) : ""}
             </input>
           ${validation(errors.postocode)}
 
-          <label for="cuisine">cuisine</label>
+          <label for="cuisine">Cuisine</label>
           <input
             id="cuisine"
             name="cuisine">
-              ${values.cuisine ? sanitize(values.cuisine) : ''}
+              ${values.cuisine ? sanitize(values.cuisine) : ""}
             </input>
           ${validation(errors.cuisine)}
         <button>Send</button>
@@ -65,7 +65,7 @@ function validation(message) {
   if (message) {
     return `<span style="color: red">${message}</span>`;
   } else {
-    return '';
+    return "";
   }
 }
 
@@ -76,11 +76,11 @@ function postItem(post) {
 }
 
 function homePage(posts, errors = {}, values = {}) {
-  const title = 'All restaurants and streets';
+  const title = "All restaurants and streets";
   const content = /*html*/ `
       <h2>All posts</h2>
       <ul>
-        ${posts.map(postItem).join('')}
+        ${posts.map(postItem).join("")}
       </ul>
     `;
   return layout(title, content);
