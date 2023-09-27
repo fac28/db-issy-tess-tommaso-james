@@ -50,27 +50,42 @@ test("can list all venues with their locations", () => {
     resetDatabase();
     const locations = listVenueInfo();
     const expected =  [
-        {
-          name: 'Babans naans',
-          street: 'Blackstock Road'
-        },
-        {
-          name: 'Yard Sale',
-          street: 'Blackstock Road'
-        },
-        {
-          name: 'Eddies',
-          street: 'Stroud Green Road'
-        },
-        {
-          name: 'Osteria Tufo',
-          street: 'Fonthill Road'
-        },
-        {
-          name: 'Pizzaria Pappagone',
-          street: 'Stroud Green Road'
-        }
-      ];
+      {
+        address: 'Blackstock Road',
+        borough: 'Finsbury Park',
+        cuisines: 'Kurdish, Bread?',
+        postcode: 'N8',
+        venueName: 'Babans naans'
+      },
+      {
+        address: 'Blackstock Road',
+        borough: 'Finsbury Park',
+        cuisines: 'Pizza',
+        postcode: 'N8',
+        venueName: 'Yard Sale'
+      },
+      {
+        address: 'Stroud Green Road',
+        borough: 'Finsbury Park',
+        cuisines: 'Turkish, Bread?',
+        postcode: 'N8',
+        venueName: 'Eddies'
+      },
+      {
+        address: 'Fonthill Road',
+        borough: 'Finsbury Park',
+        cuisines: 'Italian',
+        postcode: 'N8',
+        venueName: 'Osteria Tufo',
+      },
+      {
+        address: 'Stroud Green Road',
+        borough: 'Finsbury Park',
+        cuisines: 'Pizza, Italian',
+        postcode: 'N8',
+        venueName: 'Pizzaria Pappagone',
+      }
+    ];
   assert.deepEqual(locations, expected);
 });
 
@@ -78,38 +93,26 @@ test("can list all venues with their cuisines", () => {
     resetDatabase();
     const locations = listVenueCuisines();
     const expected =  [
-        {
-          cuisine_name: 'Kurdish',
-          venue_name: 'Babans naans'
-        },
-        {
-          cuisine_name: 'Bread?',
-          venue_name: 'Babans naans'
-        },
-        {
-          cuisine_name: 'Pizza',
-          venue_name: 'Yard Sale'
-        },
-        {
-          cuisine_name: 'Turkish',
-          venue_name: 'Eddies'
-        },
-        {
-          cuisine_name: 'Bread?',
-          venue_name: 'Eddies'
-        },
-        {
-          cuisine_name: 'Italian',
-          venue_name: 'Osteria Tufo'
-        },
-        {
-          cuisine_name: 'Pizza',
-          venue_name: 'Pizzaria Pappagone'
-        },
-        {
-          cuisine_name: 'Italian',
-          venue_name: 'Pizzaria Pappagone'
-        },
+      {
+        cuisine_names: 'Kurdish, Bread?',
+        venue_name: 'Babans naans'
+      },
+      {
+        cuisine_names: 'Turkish, Bread?',
+        venue_name: 'Eddies'
+      },
+      {
+        cuisine_names: 'Italian',
+        venue_name: 'Osteria Tufo'
+      },
+      {
+        cuisine_names: 'Pizza, Italian',
+        venue_name: 'Pizzaria Pappagone'
+      },
+      {
+        cuisine_names: 'Pizza',
+        venue_name: 'Yard Sale'
+      }
     ];
   assert.deepEqual(locations, expected);
 });
