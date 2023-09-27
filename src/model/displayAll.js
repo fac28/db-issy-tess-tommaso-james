@@ -24,11 +24,17 @@ function listLocations() {
 
 
 const select_venue_info = db.prepare(/*sql*/ `
-  SELECT
-    venue.name as venue_name,
-    location.street as location_street
-  FROM venue
-  JOIN location ON venue.location_id = location.id
+    SELECT
+        v.name AS venueName,
+        l.street AS address,
+        l.name AS borough,
+        l.postcode AS postcode,
+        GROUP_CONCAT(c.name, ', ') AS cuisines
+    FROM venue AS v
+    JOIN location AS l ON v.location_id = l.id
+    LEFT JOIN venue_cuisine AS vc ON v.id = vc.venue_id
+    LEFT JOIN cuisine AS c ON vc.cuisine_id = c.id
+    GROUP BY v.id
 `);
 
 function listVenueInfo() {
@@ -38,10 +44,11 @@ function listVenueInfo() {
 const select_venue_cuisines = db.prepare(/*sql*/ `
     SELECT
         venue.name AS venue_name,
-        cuisine.name AS cuisine_name
+        GROUP_CONCAT(cuisine.name, ', ') AS cuisine_names
     FROM venue
     JOIN venue_cuisine ON venue.id = venue_cuisine.venue_id
     JOIN cuisine ON venue_cuisine.cuisine_id = cuisine.id
+    GROUP BY venue.name
 `);
 
 function listVenueCuisines() {
@@ -49,7 +56,7 @@ function listVenueCuisines() {
 }
 
 
-/*console.log(listVenueCuisines())*/
+console.log(listVenueInfo())
 
 
 module.exports = { listVenues, listLocations, listVenueInfo, listVenueCuisines };

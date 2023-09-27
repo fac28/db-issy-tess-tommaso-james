@@ -75,7 +75,13 @@ function validation(message) {
 
 function postItem(post) {
   return `
-  <p>${sanitize(post.venue_name)} | ${sanitize(post.location_street)}</p>
+  <p>
+    ${sanitize(post.venueName)}|
+    ${sanitize(post.address)}|
+    ${sanitize(post.borough)}|
+    ${sanitize(post.postcode)}|
+    ${sanitize(post.cuisines)}
+  </p>
   `;
 }
 
