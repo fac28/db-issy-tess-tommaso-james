@@ -22,6 +22,8 @@ function createVenue(content) {
   return insert_venue.get(content);
 }
 
+// CREATE CUISINE
+
 const insert_cuisine = db.prepare(/*sql*/ `
   INSERT INTO cuisine (name)
   VALUES ($cuisine)
@@ -29,6 +31,17 @@ const insert_cuisine = db.prepare(/*sql*/ `
 
 function createCuisine(cuisine) {
   return insert_cuisine.run({ cuisine });
+}
+
+// CREATE VENUE-CUISINE 
+
+const insert_venue_cuisine = db.prepare(/*sql*/ `
+  INSERT INTO venue_cuisine (venue_id, cuisine_id)
+  VALUES ($venue_id, $cuisine_id)
+`);
+
+function linkVenueAndCuisine(venueId, cuisineId) {
+  return insert_venue_cuisine.run({ venue_id: venueId, cuisine_id: cuisineId });
 }
 
 module.exports = { createVenue, createLocation, createCuisine };
