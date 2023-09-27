@@ -76,11 +76,8 @@ function validation(message) {
 function postItem(post) {
   return `
     <li>
-      <p>${sanitize(post.venueName)}</p>
-      <p>${sanitize(post.address)}</p>
-      <p>${sanitize(post.borough)}</p>
-      <p>${sanitize(post.postcode)}</p>
-      <p>${sanitize(post.cuisine)}</p>
+      <p>${sanitize(post.name)}</p>
+      
     </li>
   `;
 }
@@ -93,6 +90,7 @@ function homePage(posts, errors = {}, values = {}) {
         ${posts.map(postItem).join("")}
       </ul>
     `;
+    console.log(posts);
   return layout(title, content);
 }
 
