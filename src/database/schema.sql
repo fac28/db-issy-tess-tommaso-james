@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS location (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
     street TEXT,
-    postcode TEXT
+    postcode TEXT,
+    UNIQUE(name, street, postcode)
 );
 
 CREATE TABLE IF NOT EXISTS venue (
