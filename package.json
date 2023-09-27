@@ -6,7 +6,7 @@
   "scripts": {
     "test": "DB_FILE=test.sqlite node -r ./src/database/seed.js --test",
     "start": "node ./src/index.js",
-    "dev": "nodemon src/index.js",
+    "dev": "DB_FILE=db.sqlite nodemon src/index.js",
     "seed": "DB_FILE=db.sqlite node src/database/seed.js"
   },
   "repository": {
