@@ -75,18 +75,12 @@ function validation(message) {
 
 function postItem(post) {
   return `
-    <li>
-      <p>${sanitize(post.venueName)}</p>
-      <p>${sanitize(post.address)}</p>
-      <p>${sanitize(post.borough)}</p>
-      <p>${sanitize(post.postcode)}</p>
-      <p>${sanitize(post.cuisine)}</p>
-    </li>
+  <p>${sanitize(post.venue_name)} | ${sanitize(post.location_street)}</p>
   `;
 }
 
 function homePage(posts, errors = {}, values = {}) {
-  const title = "All posts";
+  const title = "All restaurants and streets";
   const content = /*html*/ `
       <h2>All posts</h2>
       <ul>
