@@ -53,6 +53,7 @@ View All Food Places: See a list of all the food places that have been submitted
 
 Creating a schema for a project involving a database of Food and Coffee recommendations around Finsbury Park in London with many-to-many relationships requires careful planning to ensure that you can efficiently store and retrieve data. Here's an example of what the schema might look like:
 
+![Image Alt Text](./public/schema.png)
 Venue Table:
 
 - id (Primary Key)
