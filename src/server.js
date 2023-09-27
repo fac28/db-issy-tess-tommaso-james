@@ -1,12 +1,16 @@
 const express = require("express");
 const { formPage, homePage } = require("./templates.js");
+const model = require("./model/venue.js");
+
+const { listVenueInfo } = require("./model/displayAll.js")
 
 const server = express();
+server.use(express.static("public"));
 
 const submittedData = [];
 
 server.get("/", (req, res) => {
-  const body = homePage(submittedData);
+  const body = homePage(listVenueInfo());
   res.send(body);
 });
 
@@ -42,7 +46,19 @@ server.post("/submit", express.urlencoded({ extended: false }), (req, res) => {
     const body = formPage(submittedData, errors, req.body);
     res.status(400).send(body);
   } else {
-    submittedData.push({ venueName, address, borough, postcode, cuisine });
+    const { location_id } = model.createLocation({
+      venueName,
+      address,
+      borough,
+      postcode,
+    });
+
+    const { venue_id } = model.createVenue({ venueName, location_id });
+
+    const { cuisine_id } = model.createCuisine(cuisine);
+
+    model.linkVenueAndCuisine(venue_id, cuisine_id);
+
     res.redirect("/");
   }
 });
