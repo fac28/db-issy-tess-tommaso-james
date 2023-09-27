@@ -12,8 +12,8 @@ primary_region = "lhr"
   source = "data"
   destination = "/data"
 
-[env]
-  DB_FILE = "restaurantapp.db"
+# [env]
+# DB_FILE = "restaurantapp.db"
 
 [http_service]
   internal_port = 3000
