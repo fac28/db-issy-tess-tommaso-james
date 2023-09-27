@@ -109,3 +109,13 @@ Create many-to-many relationships between recommendations and tags, allowing a r
 Manage user accounts for users who can add and interact with recommendations.
 Create many-to-many relationships between users and recommendations to track which recommendations each user has added.
 With this schema, you can build a robust application for users to discover and share food and coffee recommendations around Finsbury Park in London while efficiently managing relationships between locations, categories, recommendations, tags, and users.
+
+HELP ME WITH A USER STORY PLEASE:
+
+I m working on a project that display food places in London.
+The user can insert details about the name of the food place, its address, postcode, and type of food.On one side the app displays the submit form, but if clicking on a button the button will direct to the home route that lists all the food places inserted by all the users
+
+the page is structured this way:
+
+there s a "public" directory for css files, a "src" for index.js, ervers.js and template.js. Inside here another 2 directories: "database" (for db code and schema of the db) and "model" (functions to display and insert data in the database) .
+Another directory (at the same level of "src") is "test", where we have all the tests.
