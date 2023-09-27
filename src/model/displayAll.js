@@ -25,8 +25,8 @@ function listLocations() {
 
 const select_venue_info = db.prepare(/*sql*/ `
   SELECT
-    venue.name,
-    location.street
+    venue.name as venue_name,
+    location.street as location_street
   FROM venue
   JOIN location ON venue.location_id = location.id
 `);
