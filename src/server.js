@@ -1,23 +1,29 @@
-const express = require("express");
-const { formPage, homePage } = require("./templates.js");
-const model = require("./model/venue.js");
-const { listVenues, listLocations,listVenueCuisines,listVenueInfo } = require("./model/displayAll.js")
+const express = require('express');
+const { formPage, homePage } = require('./templates.js');
+const model = require('./model/venue.js');
+const {
+  listVenues,
+  listLocations,
+  listVenueCuisines,
+  listVenueInfo,
+} = require('./model/displayAll.js');
+// const staticHandler = express.static(path.join("../public", "static"));
 
 const server = express();
-
+server.use(express.static('public'));
 const submittedData = [];
 
-server.get("/", (req, res) => {
+server.get('/', (req, res) => {
   const body = homePage(listVenueInfo());
   res.send(body);
 });
 
-server.get("/submit", (req, res) => {
+server.get('/submit', (req, res) => {
   const body = formPage(submittedData);
   res.send(body);
 });
 
-server.post("/submit", express.urlencoded({ extended: false }), (req, res) => {
+server.post('/submit', express.urlencoded({ extended: false }), (req, res) => {
   const venueName = req.body.venueName;
   const address = req.body.address;
   const borough = req.body.borough;
@@ -26,16 +32,16 @@ server.post("/submit", express.urlencoded({ extended: false }), (req, res) => {
   const errors = {};
   console.log(req.body);
   if (!venueName) {
-    errors.venueName = "Please enter the name of the venue";
+    errors.venueName = 'Please enter the name of the venue';
   }
   if (!address) {
-    errors.address = "Please enter a address";
+    errors.address = 'Please enter a address';
   }
   if (!borough) {
-    errors.borough = "Please enter the name of borough";
+    errors.borough = 'Please enter the name of borough';
   }
   if (!postcode) {
-    errors.postcode = "Please enter a postcode";
+    errors.postcode = 'Please enter a postcode';
   }
   if (!cuisine) {
     errors.cuisine = "Please enter what type of food it's served";
@@ -57,7 +63,7 @@ server.post("/submit", express.urlencoded({ extended: false }), (req, res) => {
 
     model.linkVenueAndCuisine(venue_id, cuisine_id);
 
-    res.redirect("/");
+    res.redirect('/');
   }
 });
 
