@@ -27,24 +27,30 @@ function createVenue(content) {
 const insert_cuisine = db.prepare(/*sql*/ `
   INSERT INTO cuisine (name)
   VALUES ($cuisine)
+  RETURNING id AS cuisine_id
 `);
 
 function createCuisine(cuisine) {
-  return insert_cuisine.run({ cuisine });
+  return insert_cuisine.get({ cuisine });
 }
 
-// CREATE VENUE-CUISINE 
+// CREATE VENUE-CUISINE
 
 const insert_venue_cuisine = db.prepare(/*sql*/ `
   INSERT INTO venue_cuisine (venue_id, cuisine_id)
   VALUES ($venue_id, $cuisine_id)
 `);
 
-function linkVenueAndCuisine(venueId, cuisineId) {
-  return insert_venue_cuisine.run({ venue_id: venueId, cuisine_id: cuisineId });
-}
+// function linkVenueAndCuisine(venueId, cuisineId) {
+//   return insert_venue_cuisine.run({ venue_id: venueId, cuisine_id: cuisineId });
+// }
 
-module.exports = { createVenue, createLocation, createCuisine };
+module.exports = {
+  createVenue,
+  createLocation,
+  createCuisine,
+  // linkVenueAndCuisine,
+};
 
 // { venueName, address, borough, postcode, cuisine }  object we recieve from form
 /* Table layout
