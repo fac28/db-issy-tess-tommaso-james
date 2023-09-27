@@ -43,8 +43,6 @@ server.post("/submit", express.urlencoded({ extended: false }), (req, res) => {
     const body = formPage(submittedData, errors, req.body);
     res.status(400).send(body);
   } else {
-    // console.log(venueName);
-    // model.createVenue(venueName);
     const { location_id } = model.createLocation({
       venueName,
       address,
@@ -53,8 +51,8 @@ server.post("/submit", express.urlencoded({ extended: false }), (req, res) => {
     });
 
     const { venue_id } = model.createVenue({ venueName, location_id });
-    console.log(venue_id);
-    // submittedData.push({ venueName, address, borough, postcode, cuisine });
+
+    model.createCuisine(cuisine);
     res.redirect("/");
   }
 });

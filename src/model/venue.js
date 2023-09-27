@@ -1,10 +1,5 @@
 const db = require("../database/db.js");
 
-/* function createVenue(content) {
-  console.log("In createVenue: ", content);
-  return insert_venue.run(content);
-} */
-
 // CREATE LOCATION
 const insert_location = db.prepare(/*sql*/ `
   INSERT INTO location (name, street, postcode)
@@ -32,13 +27,11 @@ const insert_cuisine = db.prepare(/*sql*/ `
   VALUES ($cuisine)
 `);
 
-function createCuisine(content) {
-  return insert_cuisine.run(content);
+function createCuisine(cuisine) {
+  return insert_cuisine.run({ cuisine });
 }
-// console.log(db);
-// createVenue(content);
-// console.log(createVenue(content));
-module.exports = { createVenue, createLocation };
+
+module.exports = { createVenue, createLocation, createCuisine };
 
 // { venueName, address, borough, postcode, cuisine }  object we recieve from form
 /* Table layout
