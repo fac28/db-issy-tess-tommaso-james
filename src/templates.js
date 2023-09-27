@@ -51,6 +51,10 @@ function formPage(errors = {}, values = {}) {
         </p>
       <button>Send</button>
     </form>
+
+    <form action="/" method="get" >
+      <button type="submit" >Show All Restuarants</button>
+    </form>
     
   `;
   return layout(title, content);
@@ -88,10 +92,13 @@ function postItem(post) {
 function homePage(posts, errors = {}, values = {}) {
   const title = "All restaurants and streets";
   const content = /*html*/ `
-      <h2>All posts</h2>
+      <h2>All restaurants</h2>
       <ul>
         ${posts.map(postItem).join("")}
       </ul>
+      <form action="/submit" method="get" >
+        <button type="submit" >Add a restaurant</button>
+      </form>
     `;
   return layout(title, content);
 }
