@@ -63,22 +63,38 @@ Creating a schema for a project involving a database of Food and Coffee recommen
 
 ![Image Alt Text](./public/schema.png)
 
-<strong>
+<p><strong>
 Location Table:
 </strong>
-The location table stores restaurant location details, including id, name, street, and postcode. The UNIQUE constraint ensures unique locations based on name, street, and postcode.<br>
+The location table stores restaurant location details, including id, name, street, and postcode. The UNIQUE constraint ensures unique locations based on name, street, and postcode.</p>
 
-<strong>
+<p><strong>
 Venue Table:
 </strong>
-The venue table represents restaurants with id and name fields. The location_id is a foreign key linking restaurants to locations, establishing a relationship between venues and their locations.<br>
+The venue table represents restaurants with id and name fields. The location_id is a foreign key linking restaurants to locations, establishing a relationship between venues and their locations.</p>
 
-<strong>
+<p><strong>
 Cuisine Table:
 </strong>
-The cuisine table lists restaurant cuisines with an id and unique name field. It ensures cuisine uniqueness.<br>
+The cuisine table lists restaurant cuisines with an id and unique name field. It ensures cuisine uniqueness.</p>
 
-<strong>
+<p><strong>
 Venue_Cuisine Table:
 </strong>
-Venue_Cuisine defines the many-to-many relationship between venues and cuisines. It uses foreign keys, venue_id and cuisine_id, and enforces uniqueness. This table enables versatile search and filter features, crucial for locating restaurants by their cuisine offerings.<br>
+Venue_Cuisine defines the many-to-many relationship between venues and cuisines. It uses foreign keys, venue_id and cuisine_id, and enforces uniqueness. This table enables versatile search and filter features, crucial for locating restaurants by their cuisine offerings.</p>
+
+### Project Structure:
+The project is organized as follows:
+
+<ul>
+  <li><strong>Public </strong>directory: Contains CSS files for styling.</li>
+  <li><strong>Src </strong>directory:
+    Three key functions drive the application in the src directory. The first, in index.js, initializes and configures the server, readying it to handle incoming requests. The second, found in server.js, manages core server logic, including routing for HTTP requests and form submissions. Lastly, templates.js hosts a function for dynamic HTML content generation, ensuring up-to-date information is presented on web pages by fetching data from the database.
+  </li>
+  <li><strong>Database </strong>directory: Contains database-related code and the database schema.</li>
+  <li><strong>Model </strong>directory: Contains functions to interact with the database, including inserting and retrieving data.</li>
+  <li><strong>Test </strong>directory: Contains test cases for the application.</li>
+</ul>
+
+### Credits
+The project was created by <a href="https://github.com/JamesESS">JamesESS</a>, <a href="https://github.com/isobelbutler">Isobel Butler</a>, <a href="https://github.com/tess-phillips">Tess Phillips</a> & <a href="https://github.com/benante">Tommaso Orlandi.</a>
