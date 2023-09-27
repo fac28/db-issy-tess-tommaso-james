@@ -51,9 +51,10 @@ server.post("/submit", express.urlencoded({ extended: false }), (req, res) => {
     });
 
     const { venue_id } = model.createVenue({ venueName, location_id });
+
     const { cuisine_id } = model.createCuisine(cuisine);
 
-    // model.linkVenueAndCuisine({ venue_id, cuisine_id });
+    model.linkVenueAndCuisine({ venue_id, cuisine_id });
 
     res.redirect("/");
   }
