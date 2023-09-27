@@ -80,15 +80,20 @@ function validation(message) {
 function postItem(post) {
   return `
   <p>
-    ${sanitize(post.venueName)}|
-    ${sanitize(post.address)}|
-    ${sanitize(post.borough)}|
-    ${sanitize(post.postcode)}|
+    ${sanitize(post.venueName)} |
+    ${sanitize(post.address)} |
+    ${sanitize(post.borough)} |
+    ${sanitize(post.postcode)} |
     ${sanitize(post.cuisines)}
   </p>
   `;
 }
 
+
+{/*TO ADD LATER <form method="GET">
+<p><input type="search" name="search" value="${search}"></p>
+<p><button>Search</button></p>
+</form> */}
 function homePage(posts, errors = {}, values = {}) {
   const title = "All restaurants and streets";
   const content = /*html*/ `

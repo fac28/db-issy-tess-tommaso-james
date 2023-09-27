@@ -1,7 +1,7 @@
 const express = require("express");
 const { formPage, homePage } = require("./templates.js");
 const model = require("./model/venue.js");
-const { listVenues, listLocations,listVenueCuisines,listVenueInfo } = require("./model/displayAll.js")
+const { listVenueInfo } = require("./model/displayAll.js")
 
 const server = express();
 
