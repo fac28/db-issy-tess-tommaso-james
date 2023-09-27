@@ -1,14 +1,17 @@
 # db-issy-tess-tommaso-james
 
-Finsbury Park Restaurant and Cafe Information
+Finsbury Park Restaurant and Cafe Information - Exciting!
 
 <!-- You can see the delpoyed site [here](https://hahahub.fly.dev/). -->
 
 ### Installation
- 1. Clone the repository to your local machine:
-   ```shell
-   git clone https://github.com/fac28/db-issy-tess-tommaso-james
-   ```
+
+1.  Clone the repository to your local machine:
+
+```shell
+git clone https://github.com/fac28/db-issy-tess-tommaso-james
+```
+
 2. Navigate to the project directory:
    ```shell
    cd db-issy-tess-tommaso-james
@@ -19,6 +22,7 @@ Finsbury Park Restaurant and Cafe Information
    ```
 
 ### Running Locally
+
 To run the project locally, follow these steps:
 
 1. Start the Node.js server:
@@ -26,7 +30,6 @@ To run the project locally, follow these steps:
    npm start
    ```
 2. Open your web browser and visit http://localhost:3000 to access db-issy-tess-tommaso-james locally.
-
 
 ### Team:
 
@@ -40,11 +43,13 @@ Tess: Scrum
 Creating a schema for a project involving a database of Food and Coffee recommendations around Finsbury Park in London with many-to-many relationships requires careful planning to ensure that you can efficiently store and retrieve data. Here's an example of what the schema might look like:
 
 Venue Table:
+
 - id (Primary Key)
 - name (of Restaurant / cafe)
 - location_id
 
 Location Table:
+
 - id (Primary Key)
 - name (e.g., Finsbury Park)
 - street
@@ -60,7 +65,7 @@ Establisment_Cuisine Table (Many-to-Many Relationship):
 - venue_id
 - cuisine_id
 
-<!-- More options to include... 
+<!-- More options to include...
 
 Recommendations Table:
 
