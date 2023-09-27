@@ -51,7 +51,7 @@ Venue Table:
 Location Table:
 
 - id (Primary Key)
-- name (e.g., Finsbury Park)
+- name (Boroughs e.g., Finsbury Park)
 - street
 - postcode
 
