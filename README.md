@@ -1,42 +1,47 @@
 # db-issy-tess-tommaso-james
 
-Finsbury Park Restaurant and Cafe Information - Exciting!
+London Restaurant and Cafe Information - Exciting!
 
 <!-- You can see the delpoyed site [here](https://hahahub.fly.dev/). -->
 
 ### Installation
 
-1.  Clone the repository to your local machine:
+1. Clone the repository to your local machine:
 
 ```shell
 git clone https://github.com/fac28/db-issy-tess-tommaso-james
 ```
 
 2. Navigate to the project directory:
-   ```shell
-   cd db-issy-tess-tommaso-james
-   ```
+
+```shell
+cd db-issy-tess-tommaso-james
+```
+
 3. Install project dependencies using npm:
-   ```shell
-   npm install
-   ```
+
+```shell
+npm install
+```
 
 ### Running Locally
 
 To run the project locally, follow these steps:
 
 1. Start the Node.js server:
-   ```shell
-   npm start
-   ```
+
+```shell
+npm start
+```
+
 2. Open your web browser and visit http://localhost:3000 to access db-issy-tess-tommaso-james locally.
 
 ### Team
 
-Tommaso: UX/UI  
 Issy: DevOps  
 James: QA  
 Tess: Scrum
+Tommaso: UX/UI
 
 ### Description
 
@@ -46,8 +51,11 @@ This project is a web application that allows users to input and display informa
 
 As a food enthusiast in London, I want to:
 
-Submit Information: Be able to add information about a food place in London, including its name, address, postcode, and the type of food it serves, so that others can discover new places to eat.
-View All Food Places: See a list of all the food places that have been submitted by various users in London, so that I can explore different options for dining out.
+<ul>
+<li>Submit Information: be able to add information about a food place in London, including its name, address, postcode, and the type of food it serves, so that others can discover new places to eat.</li>
+<li>View All Food Places: see a list of all the food places that have been submitted by various users in London, so that I can explore different options for dining out.
+</li>
+</ul>
 
 ### Schema:
 
