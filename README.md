@@ -31,12 +31,23 @@ To run the project locally, follow these steps:
    ```
 2. Open your web browser and visit http://localhost:3000 to access db-issy-tess-tommaso-james locally.
 
-### Team:
+### Team
 
 Tommaso: UX/UI  
 Issy: DevOps  
 James: QA  
 Tess: Scrum
+
+### Description
+
+This project is a web application that allows users to input and display information about food places in London. Users can submit details such as the name of the food place, its address, postcode, and the type of food it serves. The application provides two main features: a submission form for users to input data, and a home page that lists all the food places submitted by users.
+
+### User Story
+
+As a food enthusiast in London, I want to:
+
+Submit Information: Be able to add information about a food place in London, including its name, address, postcode, and the type of food it serves, so that others can discover new places to eat.
+View All Food Places: See a list of all the food places that have been submitted by various users in London, so that I can explore different options for dining out.
 
 ### Schema:
 
