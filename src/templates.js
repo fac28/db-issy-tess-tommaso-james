@@ -12,16 +12,16 @@ function formPage(errors = {}, values = {}) {
             value="${values.venueName ? sanitize(values.venueName) : ""}"
           >
           ${validation(errors.venueName)}
-        
+            </input>
         
           <label for="address">Street address</label>
           <input
             id="address"
             name="address">
               ${values.address ? sanitize(values.address) : ""}
-            </input>
           ${validation(errors.address)}
-          
+          </input>
+
           <label for="borough">Borough</label>
           <input
             id="borough"
@@ -83,11 +83,6 @@ function postItem(post) {
   `;
 }
 
-
-{/*TO ADD LATER <form method="GET">
-<p><input type="search" name="search" value="${search}"></p>
-<p><button>Search</button></p>
-</form> */}
 function homePage(posts, errors = {}, values = {}) {
   const title = "All restaurants and streets";
   const content = /*html*/ `
