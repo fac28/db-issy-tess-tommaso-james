@@ -12,7 +12,7 @@ function formPage(errors = {}, values = {}) {
             value="${values.venueName ? sanitize(values.venueName) : ""}"
           >
           ${validation(errors.venueName)}
-        
+            </input>
         
           <label for="address">Street address</label>
           <input
