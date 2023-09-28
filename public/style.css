@@ -1,0 +1,47 @@
+/* :root {
+  colours
+} */
+body {
+  background-color: #f2f2ef;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+main {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+h2 {
+  text-align: center;
+}
+
+.form-container {
+  min-width: fit-content;
+  display: grid;
+  justify-items: center;
+  max-width: 80%;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 1em;
+  border: 2px solid #26665f;
+  box-shadow: 5px 5px 20px 5px rgba(255, 255, 255, 0.5);
+  background-color: #c1dee1;
+
+  /* margin: 0 auto; */
+  /* justify-content: center; */
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+form > label,
+button {
+  display: block;
+}
+
+/* fonts */
