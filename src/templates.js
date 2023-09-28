@@ -48,7 +48,7 @@ function formPage(errors = {}, values = {}) {
       </form>
       
       <form action="/" method="get" >
-        <button type="submit" >Show All Restuarants</button>
+        <button type="submit" >Show All Restaurants</button>
       </form>
       
       </div>
@@ -57,7 +57,6 @@ function formPage(errors = {}, values = {}) {
   `;
   return layout(title, content);
 }
-
 
 function sanitize(unsafe) {
   return unsafe /* .replace(/</g, "&lt;") */;
@@ -83,21 +82,25 @@ function postItem(post) {
   `;
 }
 
-
-{/*TO ADD LATER <form method="GET">
+{
+  /*TO ADD LATER <form method="GET">
 <p><input type="search" name="search" value="${search}"></p>
 <p><button>Search</button></p>
-</form> */}
+</form> */
+}
 function homePage(posts, errors = {}, values = {}) {
   const title = "All restaurants and streets";
   const content = /*html*/ `
       <h2>All restaurants</h2>
+      <div class="list-container">
       <ul>
         ${posts.map(postItem).join("")}
       </ul>
+      
       <form action="/submit" method="get" >
-        <button type="submit" >Add a restaurant</button>
+      <button type="submit" >Add a restaurant</button>
       </form>
+      </div>
     `;
   return layout(title, content);
 }
@@ -111,10 +114,7 @@ function layout(title, content) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
          <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="normalize.css"/>
         <link rel="stylesheet" type="text/css" href="style.css"/>
       </head>
