@@ -1,7 +1,12 @@
 const express = require("express");
 const { formPage, homePage } = require("./templates.js");
 const model = require("./model/venue.js");
-const { listVenues, listLocations,listVenueCuisines,listVenueInfo } = require("./model/displayAll.js")
+const {
+  listVenues,
+  listLocations,
+  listVenueCuisines,
+  listVenueInfo,
+} = require("./model/displayAll.js");
 
 const server = express();
 
@@ -18,11 +23,13 @@ server.get("/submit", (req, res) => {
 });
 
 server.post("/submit", express.urlencoded({ extended: false }), (req, res) => {
-  const venueName = req.body.venueName;
-  const address = req.body.address;
-  const borough = req.body.borough;
-  const postcode = req.body.postcode;
-  const cuisine = req.body.cuisine;
+  const { venueName, address, borough, postcode, cuisine } = req.body;
+
+  // const venueName = req.body.venueName;
+  // const address = req.body.address;
+  // const borough = req.body.borough;
+  // const postcode = req.body.postcode;
+  // const cuisine = req.body.cuisine;
   const errors = {};
   console.log(req.body);
   if (!venueName) {
