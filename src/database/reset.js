@@ -2,16 +2,23 @@ const seedDb = require("./seed.js");
 const db = require("./db.js");
 
 
-const clear_venues = db.prepare("DELETE FROM venue;");
-const clear_cuisine = db.prepare("DELETE FROM cuisine;");
-const clear_location = db.prepare("DELETE FROM location;");
-const clear_venue_cuisine = db.prepare("DELETE FROM venue_cuisine;");
-
 function clearDb() {
-    clear_venue_cuisine.run(); // Clear the venue_cuisine table
-    clear_venues.run(); // Clear the venue table
-    clear_cuisine.run(); // Clear the cuisine table
-    clear_location.run(); // Clear the location table
+    db.exec(/*sql*/ `
+        DELETE FROM venue_cuisine;
+        DELETE FROM sqlite_sequence WHERE name='venue_cuisine';
+    `);
+    db.exec(/*sql*/ `
+        DELETE FROM venue;
+        DELETE FROM sqlite_sequence WHERE name='venue';
+    `);
+    db.exec(/*sql*/ `
+    DELETE FROM cuisine;
+    DELETE FROM sqlite_sequence WHERE name='cuisine';
+    `);
+    db.exec(/*sql*/ `
+        DELETE FROM location;
+        DELETE FROM sqlite_sequence WHERE name='location';
+    `);
 }
 
 

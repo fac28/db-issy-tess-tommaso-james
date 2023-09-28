@@ -5,8 +5,8 @@ const { resetDatabase } = require("../src/database/reset.js");
 
 
 
-test("can list all venues", () => {
-    resetDatabase();
+test("can list all venues", async () => {
+    await resetDatabase();
     const venues = listVenues();
     const expected = [
     { name: "Babans naans" },
