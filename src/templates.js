@@ -58,7 +58,6 @@ function formPage(errors = {}, values = {}) {
   return layout(title, content);
 }
 
-
 function sanitize(unsafe) {
   return unsafe /* .replace(/</g, "&lt;") */;
 }
@@ -83,7 +82,7 @@ function postItem(post) {
   `;
 }
 
-function homePage(posts, errors = {}, values = {}) {
+function homePage(posts) {
   const title = "All restaurants and streets";
   const content = /*html*/ `
       <h2>All restaurants</h2>
