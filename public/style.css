@@ -1,13 +1,13 @@
-/* :root {
-  colours
-} */
 body {
   background-color: #f2f2ef;
+  display: grid;
+  justify-items: center;
+  font-family: "Inter", sans-serif;
+  padding: 2em 0.5em;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -17,12 +17,12 @@ main {
 }
 h2 {
   text-align: center;
+  font-family: "Roboto", sans-serif;
 }
 
 .form-container {
   min-width: fit-content;
   display: grid;
-  justify-items: center;
   max-width: 80%;
   margin: 0 auto;
   border-radius: 20px;
@@ -34,9 +34,25 @@ h2 {
   /* margin: 0 auto; */
   /* justify-content: center; */
 }
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
 
 input {
   margin-bottom: 1em;
+}
+
+ul {
+  padding-left: 0;
+}
+
+ul p {
+  background-color: #c1dee1;
+  padding: 1em;
+  border-radius: 5px;
+  border: 2px solid #26665f;
+  box-shadow: 5px 5px 20px 5px rgba(255, 255, 255, 0.5);
 }
 
 form > label,
@@ -45,3 +61,7 @@ button {
 }
 
 /* fonts */
+button {
+  margin-bottom: 1em;
+  padding: 0.4em;
+}

@@ -52,8 +52,4 @@ function listVenueCuisines() {
     return select_venue_cuisines.all();
 }
 
-
-// console.log(listVenueInfo())
-
-
 module.exports = { listVenues, listLocations, listVenueInfo, listVenueCuisines };
