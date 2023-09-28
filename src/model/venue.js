@@ -51,20 +51,3 @@ module.exports = {
   createCuisine,
   linkVenueAndCuisine,
 };
-
-// { venueName, address, borough, postcode, cuisine }  object we recieve from form
-/* Table layout
-
- location table
- id (key) - name - street - postcode
-
-venue table
-id (key) - name - location_id
-
-cuisine table
-id (key) - name
-
-venue_cuisine
-venue_id (key) - cuisine_id (key)
-
-*/

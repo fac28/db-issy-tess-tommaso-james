@@ -16,7 +16,6 @@ function clearDb() {
 
 
 function resetDatabase() {
-    console.log("arrived in the test reset")
     clearDb();
     seedDb();       // Seed the database
 }
