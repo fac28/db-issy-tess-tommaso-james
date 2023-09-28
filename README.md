@@ -36,6 +36,22 @@ npm start
 
 2. Open your web browser and visit http://localhost:3000 to access db-issy-tess-tommaso-james locally.
 
+### For developers
+
+To run the project locally, follow these steps:
+
+1. Start the Node.js server:
+
+```shell
+npm run seed
+```
+
+2.
+
+```shell
+npm run dev
+```
+
 ### Team
 
 Issy: DevOps  
@@ -56,7 +72,6 @@ As a food enthusiast in London, I want to:
 <li>View All Food Places: see a list of all the food places that have been submitted by various users in London, so that I can explore different options for dining out.
 </li>
 </ul>
-
 
 ### Schema:
 
@@ -85,6 +100,7 @@ Venue_Cuisine Table:
 Venue_Cuisine defines the many-to-many relationship between venues and cuisines. It uses foreign keys, venue_id and cuisine_id, and enforces uniqueness. This table enables versatile search and filter features, crucial for locating restaurants by their cuisine offerings.</p>
 
 ### Project Structure:
+
 The project is organized as follows:
 
 <ul>
@@ -98,4 +114,5 @@ The project is organized as follows:
 </ul>
 
 ### Credits
+
 The project was created by <a href="https://github.com/JamesESS">JamesESS</a>, <a href="https://github.com/isobelbutler">Isobel Butler</a>, <a href="https://github.com/tess-phillips">Tess Phillips</a> & <a href="https://github.com/benante">Tommaso Orlandi.</a>
