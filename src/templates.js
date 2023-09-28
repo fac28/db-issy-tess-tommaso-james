@@ -19,9 +19,9 @@ function formPage(errors = {}, values = {}) {
             id="address"
             name="address">
               ${values.address ? sanitize(values.address) : ""}
-            </input>
           ${validation(errors.address)}
-          
+          </input>
+
           <label for="borough">Borough</label>
           <input
             id="borough"
