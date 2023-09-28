@@ -14,7 +14,7 @@
     "url": "git+https://github.com/fac28/db-issy-tess-tommaso-james.git"
   },
   "volta": {
-    "node": "^18.16.0"
+    "node": "18.16.0"
   },
   "author": "",
   "license": "ISC",
