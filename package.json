@@ -7,6 +7,7 @@
     "test": "DB_FILE=test.sqlite node -r ./src/database/seed.js --test",
     "test:display": "DB_FILE=test.sqlite node -r ./src/database/seed.js ./test/displayAll.test.js",
     "test:insert": "DB_FILE=test.sqlite node -r ./src/database/seed.js ./test/venue.test.js",
+    "test:home": "DB_FILE=test.sqlite node -r ./src/database/seed.js ./test/homeRoute.test.js",
     "start": "node ./src/index.js",
     "dev": "DB_FILE=db.sqlite nodemon src/index.js",
     "seed": "DB_FILE=db.sqlite node src/database/seed.js"
